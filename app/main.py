@@ -43,3 +43,4 @@ def support(request: SupportRequest):
         "answer": result["answer"],
         "sources": result["sources"]
     }
+    
