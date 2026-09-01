@@ -16,7 +16,7 @@ def generate_answer(query):
     documents = retrieve_documents(
         query,
         top_k=3,
-        min_score=0.30
+        min_score=0.45
     )
 
     if not documents:
@@ -47,6 +47,10 @@ KNOWLEDGE BASE:
 
 USER QUESTION:
 {query}
+
+If the knowledge base does not contain enough information to answer the question, do not guess.
+Say:
+"I don't have enough information in the knowledge base. Please contact human IT support."
 
 Give a concise and helpful answer.
 At the end, mention the source used.
