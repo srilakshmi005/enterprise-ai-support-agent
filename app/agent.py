@@ -56,12 +56,26 @@ Give a concise and helpful answer.
 At the end, mention the source used.
 """
 
+    try:
     response = client.models.generate_content(
         model="gemini-3.6-flash",
         contents=prompt
     )
 
+    answer = response.text
+
+except Exception as e:
+    if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+        return {
+            "answer": (
+                "I don't have enough information in the knowledge base. "
+                "Please contact human IT support."
+            ),
+            "sources": []
+        }
+    raise
+
     return {
-        "answer": response.text,
+        "answer": answer ,
         "sources": [doc["title"] for doc in documents]
     }
