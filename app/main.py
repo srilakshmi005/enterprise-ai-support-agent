@@ -27,8 +27,15 @@ def support(request: SupportRequest):
 
     result = generate_answer(request.query)
 
+    if not result["sources"]:
+        return {
+            "type": "human_escalation",
+            "answer": result["answer"],
+            "sources": []
+        }
+
     return {
-        "type": "knowledge_answer" if result["sources"] else "human_escalation",
+        "type": "knowledge_answer",
         "answer": result["answer"],
         "sources": result["sources"]
     }
