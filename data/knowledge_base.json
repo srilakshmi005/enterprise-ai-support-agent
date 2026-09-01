@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Password Reset",
+    "content": "Employees can reset their company password through the internal password portal. If the reset fails, contact the IT help desk."
+  },
+  {
+    "title": "WiFi Troubleshooting",
+    "content": "If company WiFi is not connecting, restart WiFi, forget the network, reconnect, and verify the device has the latest network updates."
+  },
+  {
+    "title": "VPN Access",
+    "content": "Employees working remotely must connect through the approved company VPN. If VPN authentication fails, contact IT support."
+  },
+  {
+    "title": "Laptop Hardware Issue",
+    "content": "For laptop hardware problems, record the device ID and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Software Installation",
+    "content": "Employees should request software installation through the approved software request process. Unauthorized software should not be installed on company devices."
+  },
+  {
+    "title": "Email Problem",
+    "content": "If company email is not working, check the internet connection, restart the email application, and verify that the account is signed in. If the problem continues, contact IT support."
+  },
+  {
+    "title": "Account Lockout",
+    "content": "After multiple failed login attempts, an employee account may become locked. Contact the IT help desk to request account unlock assistance."
+  }
+]
