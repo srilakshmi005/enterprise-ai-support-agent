@@ -16,7 +16,7 @@ def generate_answer(query):
     documents = retrieve_documents(
         query,
         top_k=3,
-        min_score=0.45
+        min_score=0.60
     )
 
     if not documents:
