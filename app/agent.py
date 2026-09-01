@@ -1,7 +1,7 @@
 import os
 from google import genai
 
-from rag import retrieve_documents
+from app.rag import retrieve_documents
 
 
 # Gemini client
