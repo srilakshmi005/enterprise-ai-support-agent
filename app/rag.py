@@ -38,7 +38,7 @@ index.add(
 )
 
 
-def retrieve_documents(query, top_k=3, min_score=0.30):
+def retrieve_documents(query, top_k=3, min_score=0.50):
     """Find the most relevant knowledge-base documents."""
 
     query_embedding = embedding_model.encode(
