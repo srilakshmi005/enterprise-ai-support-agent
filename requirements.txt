@@ -4,3 +4,4 @@ faiss-cpu
 fastapi
 uvicorn
 numpy
+pydantic
