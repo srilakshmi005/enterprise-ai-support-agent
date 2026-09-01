@@ -49,6 +49,7 @@ USER QUESTION:
 {query}
 
 If the knowledge base does not contain enough information to answer the question, do not guess.
+
 Say:
 "I don't have enough information in the knowledge base. Please contact human IT support."
 
@@ -57,25 +58,26 @@ At the end, mention the source used.
 """
 
     try:
-    response = client.models.generate_content(
-        model="gemini-3.6-flash",
-        contents=prompt
-    )
+        response = client.models.generate_content(
+            model="gemini-3.6-flash",
+            contents=prompt
+        )
 
-    answer = response.text
+        answer = response.text
 
-except Exception as e:
-    if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-        return {
-            "answer": (
-                "I don't have enough information in the knowledge base. "
-                "Please contact human IT support."
-            ),
-            "sources": []
-        }
-    raise
+    except Exception as e:
+        if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+            return {
+                "answer": (
+                    "I don't have enough information in the knowledge base. "
+                    "Please contact human IT support."
+                ),
+                "sources": []
+            }
+
+        raise
 
     return {
-        "answer": answer ,
+        "answer": answer,
         "sources": [doc["title"] for doc in documents]
     }
