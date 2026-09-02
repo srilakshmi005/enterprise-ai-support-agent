@@ -1,6 +1,5 @@
 google-genai
-sentence-transformers
-faiss-cpu
+scikit-learn
 fastapi
 uvicorn
 numpy
