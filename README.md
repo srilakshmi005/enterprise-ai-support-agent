@@ -1,100 +1,230 @@
-# Enterprise AI Support Agent
+# 🤖 Enterprise AI Support Agent
 
-An AI-powered IT Support Agent that uses RAG (Retrieval-Augmented Generation) to answer employee IT support questions from a knowledge base.
+An AI-powered enterprise IT support system that uses **Retrieval-Augmented Generation (RAG)** to answer employee IT support questions from a trusted company knowledge base.
 
-## Features
+## ✨ Features
 
-- AI-powered IT support
-- FAISS document retrieval
-- Sentence Transformer embeddings
-- Google Gemini AI
-- Knowledge base source retrieval
-- Human escalation for unsupported questions
-- FastAPI REST API
+- 🤖 AI-powered IT support
+- 🔎 Retrieval-Augmented Generation (RAG)
+- 🧠 Semantic document search
+- 🔤 Sentence Transformers for embeddings
+- 📊 Cosine similarity for document retrieval
+- 💎 Gemini for natural-language answer generation
+- ⚡ FastAPI REST API
+- 📚 Knowledge-base source tracking
+- 👨‍💻 Human escalation for unsupported issues
+- 🎫 Automatic support ticket creation
+- 📋 Clear API responses for knowledge answers and escalations
 
-## Technologies
+## 🏗️ System Architecture
 
-- Python
-- FastAPI
-- Google Gemini
-- FAISS
-- Sentence Transformers
-- NumPy
-- Pydantic
+👤 User Query
+↓
+⚡ FastAPI API
+↓
+🔎 RAG Retrieval
+↓
+📚 Knowledge Base
+↓
+📄 Relevant Documents
+↓
+💎 Gemini AI
+↓
+💬 Knowledge Answer / 🎫 Human Escalation
+↓
+🛠️ Support Ticket
 
-## How It Works
+## 🛠️ Technology Stack
 
-User asks an IT support question.
+- 🐍 Python
+- ⚡ FastAPI
+- 💎 Google Gemini API
+- 🔤 Sentence Transformers
+- 📊 scikit-learn
+- 🔢 NumPy
+- 📄 JSON
+- 🌐 REST API
 
-The system searches the knowledge base using FAISS.
+## 📁 Project Structure
 
-Relevant documents are retrieved.
+enterprise-ai-support-agent/
+├── app/
+│   ├── agent.py
+│   ├── rag.py
+│   ├── main.py
+│   └── tools.py
+├── data/
+│   └── knowledge_base.json
+├── README.md
+└── requirements.txt
 
-Gemini generates an answer using the retrieved information.
+## 🔄 How It Works
 
-If the knowledge base does not contain enough information, the system escalates the issue to human IT support.
+1. 👤 The employee sends an IT support question.
+2. ⚡ FastAPI receives the request.
+3. 🔎 The RAG system searches the company knowledge base.
+4. 🔤 Sentence Transformer embeddings find relevant documents.
+5. 📊 Cosine similarity ranks the retrieved documents.
+6. 💎 Gemini generates an answer using the retrieved information.
+7. 📚 The API returns the answer and source documents.
+8. 🎫 Unsupported issues are escalated to human IT support and a support ticket is created.
 
-## Example
+## 🧪 Example Queries
 
-Question:
+### 🔐 Password Reset
 
-My company WiFi is not connecting.
+**Question:**  
+How do I reset my password?
 
-The system retrieves:
+**Response:**  
+Employees can reset a company password through the internal password portal. If the reset fails, contact the IT help desk.
 
-WiFi Troubleshooting
+**Source:** Password Reset
 
-and generates an answer based on the knowledge base.
+### 📶 WiFi Problem
 
-## Human Escalation
+**Question:**  
+My WiFi is not working.
 
-If the knowledge base does not contain information about a question, the system does not guess.
+**Response:**  
+If company WiFi is not connecting, restart WiFi, forget the network, reconnect, and verify the device has the latest network updates.
+
+**Source:** WiFi Not Connecting
+
+### 🎣 Phishing Email
+
+**Question:**  
+I think this email is phishing.
+
+**Response:**  
+Do not interact with suspicious links or attachments in a suspected phishing email. Report it through the organization's approved security process.
+
+**Source:** Phishing Email
+
+### 💻 Laptop Problem
+
+**Question:**  
+My laptop won't turn on.
+
+**Response:**  
+For a physically damaged company laptop, record the device ID and contact the IT help desk for hardware support.
+
+**Source:** Laptop Broken
+
+### 🏠 Remote Access
+
+**Question:**  
+How can I access company systems from home?
+
+**Response:**  
+Employees working remotely must connect through the approved company VPN. If VPN authentication fails, contact IT support.
+
+**Source:** VPN Access
+
+### 🎫 Unsupported Issue
+
+**Question:**  
+My employee ID card was lost.
+
+**Response:**  
+The system determines that sufficient knowledge is not available and escalates the request to human IT support.
+
+A support ticket is automatically created.
+
+## 🌐 API Endpoints
+
+### ❤️ Health Check
+
+**GET /**
+
+Example response:
+
+    {
+        "message": "Enterprise AI Support Agent is running"
+    }
+
+### 💬 Support
+
+**POST /support**
+
+Request:
+
+    {
+        "query": "How do I reset my password?"
+    }
+
+Example response:
+
+    {
+        "type": "knowledge_answer",
+        "answer": "Employees can reset a company password through the internal password portal.",
+        "sources": [
+            "Password Reset",
+            "Forgotten Password",
+            "Password Expired"
+        ]
+    }
+
+## 🎫 Human Escalation
+
+When the knowledge base does not contain enough information, the system **does not invent an answer**.
+
+Instead, it creates a human-support ticket.
 
 Example:
 
-What should I do if my laptop is stolen?
+    {
+        "type": "human_escalation",
+        "answer": "I don't have enough information in the knowledge base. Please contact human IT support.",
+        "ticket": {
+            "ticket_id": "IT-XXXXXXXX",
+            "status": "Created"
+        },
+        "sources": []
+    }
 
-The system returns:
+## 🧠 Key AI Concepts Demonstrated
 
-human_escalation
+- 🔎 Retrieval-Augmented Generation
+- 🔤 Text Embeddings
+- 📊 Cosine Similarity
+- 🧠 Semantic Search
+- 💎 LLM-based Response Generation
+- 🎯 Intent Detection
+- 📚 Knowledge Grounding
+- 👨‍💻 Human-in-the-loop Escalation
+- 🌐 REST API Development
+- 🎫 Automated Support Ticket Creation
 
-and asks the user to contact human IT support.
+## 🔐 Safety & Reliability
 
-## API
+The system provides answers based on retrieved enterprise knowledge rather than freely generating unsupported information.
 
-### Health Check
+When relevant information cannot be found:
 
-GET /
+**Knowledge available → 💬 Answer**
 
-### Support
+**Knowledge unavailable → 🎫 Human escalation**
 
-POST /support
+This helps reduce unsupported or hallucinated responses.
 
-Example request:
+## 🎯 Project Goal
 
-{
-  "query": "My company WiFi is not connecting"
-}
+The goal of this project is to demonstrate how an enterprise can build an AI-powered IT support assistant that answers common employee questions using trusted internal knowledge while safely escalating unsupported issues to human support.
 
-## Project Structure
+## 🚀 Future Enhancements
 
-enterprise-ai-support-agent/
+- 🔑 Employee authentication
+- 🗄️ Production database integration
+- 📊 Admin support dashboard
+- 🎫 Real ticket-management integration
+- 💬 Conversation history
+- 📈 Analytics and monitoring
+- 🔐 Enterprise security controls
+- ☁️ Cloud deployment
 
-app/
+## 👩‍💻 Author
 
-main.py
+**Srilakshmi Kummari**
 
-agent.py
-
-rag.py
-
-tools.py
-
-requirements.txt
-
-README.md
-
-## Installation
-
-```bash
-pip install -r requirements.txt
+Built as an **Enterprise AI / RAG project** demonstrating practical use of Generative AI, semantic search, and API development.

@@ -45,7 +45,7 @@ document_embeddings = model.encode(
 
 
 # ============================================================
-# SPECIFIC INTENT PHRASES
+# INTENT PHRASES
 # ============================================================
 
 LOCKOUT_PHRASES = [
@@ -93,7 +93,6 @@ PASSWORD_RESET_PHRASES = [
 # ============================================================
 
 def normalize(text):
-
     text = text.lower()
 
     text = re.sub(
@@ -112,31 +111,26 @@ def normalize(text):
 
 
 # ============================================================
-# FIND SPECIFIC INTENT
+# SPECIFIC INTENT
 # ============================================================
 
 def detect_specific_intent(query):
 
     query = normalize(query)
 
-    # Most important: account lockout
     for phrase in LOCKOUT_PHRASES:
-
         if normalize(phrase) in query:
             return "account_lockout"
 
     for phrase in VPN_PHRASES:
-
         if normalize(phrase) in query:
             return "vpn"
 
     for phrase in WIFI_PHRASES:
-
         if normalize(phrase) in query:
             return "wifi"
 
     for phrase in PASSWORD_RESET_PHRASES:
-
         if normalize(phrase) in query:
             return "password_reset"
 
@@ -144,53 +138,42 @@ def detect_specific_intent(query):
 
 
 # ============================================================
-# CHECK WHETHER DOCUMENT BELONGS TO INTENT
+# DOCUMENT INTENT MATCHING
 # ============================================================
 
 def matches_intent(title, content, intent):
 
     title_text = normalize(title)
     content_text = normalize(content)
+
     text = f"{title_text} {content_text}"
 
-
     if intent == "account_lockout":
-
         return (
             "account lockout" in title_text
             or "unlock company account" in title_text
             or "account locked" in text
-            or (
-                "unlock" in text
-                and "account" in text
-            )
+            or ("unlock" in text and "account" in text)
         )
 
-
     if intent == "vpn":
-
         return (
             "vpn" in text
             or "remote access" in text
         )
 
-
     if intent == "wifi":
-
         return (
             "wifi" in text
             or "wireless" in text
         )
 
-
     if intent == "password_reset":
-
         return (
             "password reset" in title_text
             or "forgotten password" in title_text
             or "forgot password" in title_text
         )
-
 
     return False
 
@@ -202,25 +185,16 @@ def matches_intent(title, content, intent):
 def retrieve_documents(
     query,
     top_k=3,
-    min_score=0.40
+    min_score=0.50
 ):
 
     if not query or not query.strip():
         return []
 
-
-    # --------------------------------------------------------
-    # Detect highly specific intent
-    # --------------------------------------------------------
-
     specific_intent = detect_specific_intent(query)
-
 
     # --------------------------------------------------------
     # HARD INTENT ROUTING
-    #
-    # If the user clearly expresses a specific problem,
-    # search matching documents first.
     # --------------------------------------------------------
 
     if specific_intent:
@@ -234,9 +208,7 @@ def retrieve_documents(
                 doc["content"],
                 specific_intent
             ):
-
                 matching_indices.append(idx)
-
 
         if matching_indices:
 
@@ -262,14 +234,16 @@ def retrieve_documents(
 
                 idx = matching_indices[position]
 
-                results.append({
-                    "title": documents[idx]["title"],
-                    "content": documents[idx]["content"],
-                    "score": float(scores[position])
-                })
+                score = float(scores[position])
+
+                if score >= min_score:
+                    results.append({
+                        "title": documents[idx]["title"],
+                        "content": documents[idx]["content"],
+                        "score": score
+                    })
 
             return results
-
 
     # --------------------------------------------------------
     # NORMAL SEMANTIC SEARCH
@@ -285,11 +259,11 @@ def retrieve_documents(
         document_embeddings
     )[0]
 
-    ranked_indices = np.argsort(scores)[::-1][:top_k]
+    ranked_indices = np.argsort(scores)[::-1]
 
     results = []
 
-    for idx in ranked_indices:
+    for idx in ranked_indices[:top_k]:
 
         score = float(scores[idx])
 

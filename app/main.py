@@ -2,11 +2,12 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 from app.agent import generate_answer
+from app.tools import create_support_ticket
 
 
 app = FastAPI(
     title="Enterprise AI Support Agent",
-    description="RAG-powered AI support agent",
+    description="RAG-powered AI support agent with human escalation",
     version="1.0.0"
 )
 
@@ -27,15 +28,18 @@ def support(request: SupportRequest):
 
     result = generate_answer(request.query)
 
-    if not result["sources"]:
+    if result["sources"]:
         return {
-            "type": "human_escalation",
+            "type": "knowledge_answer",
             "answer": result["answer"],
-            "sources": []
+            "sources": result["sources"]
         }
 
+    ticket = create_support_ticket(request.query)
+
     return {
-        "type": "knowledge_answer",
+        "type": "human_escalation",
         "answer": result["answer"],
-        "sources": result["sources"]
+        "ticket": ticket,
+        "sources": []
     }
