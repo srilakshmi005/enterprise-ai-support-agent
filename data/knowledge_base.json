@@ -1,30 +1,402 @@
 [
   {
     "title": "Password Reset",
-    "content": "Employees can reset their company password through the internal password portal. If the reset fails, contact the IT help desk."
+    "content": "Employees can reset a company password through the internal password portal. If the reset fails, contact the IT help desk."
   },
   {
-    "title": "WiFi Troubleshooting",
+    "title": "Password Change",
+    "content": "Employees can change their company password through the approved password portal after signing in. Contact IT support if the change fails."
+  },
+  {
+    "title": "Forgotten Password",
+    "content": "If an employee forgets the company password, use the internal password reset portal. If recovery is unsuccessful, contact the IT help desk."
+  },
+  {
+    "title": "Password Expired",
+    "content": "If a company password has expired, use the approved password portal to create a new password. Contact IT support if the portal does not work."
+  },
+  {
+    "title": "Password Policy",
+    "content": "Company passwords must follow the organization's password policy. Use the approved password portal when creating or changing a password."
+  },
+  {
+    "title": "Account Lockout",
+    "content": "After multiple failed login attempts, an employee account may become locked. Contact the IT help desk to request account unlock assistance."
+  },
+  {
+    "title": "Unlock Company Account",
+    "content": "Employees whose company accounts are locked should contact the IT help desk for account unlock assistance."
+  },
+  {
+    "title": "Login Failure",
+    "content": "If company login fails, verify the username and password and check whether the account is locked. Contact IT support if the issue continues."
+  },
+  {
+    "title": "Username Problem",
+    "content": "If an employee cannot remember or use the company username, contact the IT help desk for account assistance."
+  },
+  {
+    "title": "Multi-Factor Authentication",
+    "content": "Employees should use the approved multi-factor authentication method when prompted. Contact IT support if MFA cannot be completed."
+  },
+  {
+    "title": "MFA Code Not Received",
+    "content": "If an MFA verification code does not arrive, verify the registered contact method and network connection, then contact IT support if the problem continues."
+  },
+  {
+    "title": "MFA Device Change",
+    "content": "Employees who replace their MFA device should contact IT support to update or re-register the approved authentication method."
+  },
+  {
+    "title": "WiFi Not Connecting",
     "content": "If company WiFi is not connecting, restart WiFi, forget the network, reconnect, and verify the device has the latest network updates."
+  },
+  {
+    "title": "WiFi Disconnecting",
+    "content": "If company WiFi keeps disconnecting, reconnect to the approved network, restart the device's WiFi connection, and check for network updates."
+  },
+  {
+    "title": "Slow WiFi",
+    "content": "For slow company WiFi, reconnect to the approved network, restart WiFi, and check whether the device has current network updates."
+  },
+  {
+    "title": "WiFi Network Missing",
+    "content": "If the company WiFi network is not visible, restart WiFi and the device, then check again. Contact IT support if it remains unavailable."
+  },
+  {
+    "title": "WiFi Authentication",
+    "content": "If company WiFi authentication fails, verify that the correct company network is selected and contact IT support if authentication still fails."
+  },
+  {
+    "title": "WiFi on New Laptop",
+    "content": "A new company laptop should connect to the approved WiFi network using the organization's required credentials. Contact IT support if connection fails."
   },
   {
     "title": "VPN Access",
     "content": "Employees working remotely must connect through the approved company VPN. If VPN authentication fails, contact IT support."
   },
   {
+    "title": "VPN Not Connecting",
+    "content": "If the company VPN does not connect, verify the internet connection and retry the approved VPN. Contact IT support if authentication or connection continues to fail."
+  },
+  {
+    "title": "VPN Authentication Failure",
+    "content": "If VPN authentication fails, verify company credentials and use the approved VPN client. Contact IT support if the problem continues."
+  },
+  {
+    "title": "VPN Disconnecting",
+    "content": "If the company VPN repeatedly disconnects, check the internet connection and restart the approved VPN client. Contact IT support if it continues."
+  },
+  {
+    "title": "Remote Access",
+    "content": "Employees working remotely should use the approved company VPN for access to internal company resources."
+  },
+  {
+    "title": "VPN Client Installation",
+    "content": "Use the approved software request process to obtain the company VPN client. Unauthorized VPN software should not be installed."
+  },
+  {
     "title": "Laptop Hardware Issue",
     "content": "For laptop hardware problems, record the device ID and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Laptop Not Starting",
+    "content": "If a company laptop does not start, record the device ID and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Laptop Screen Problem",
+    "content": "For a damaged or malfunctioning company laptop screen, record the device ID and contact the IT help desk."
+  },
+  {
+    "title": "Laptop Keyboard Problem",
+    "content": "If the company laptop keyboard is not working correctly, record the device ID and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Laptop Touchpad Problem",
+    "content": "If the company laptop touchpad is not working, restart the device if possible and contact IT support if the issue remains."
+  },
+  {
+    "title": "Laptop Battery Problem",
+    "content": "For company laptop battery or charging problems, record the device ID and contact the IT help desk."
+  },
+  {
+    "title": "Laptop Overheating",
+    "content": "If a company laptop is overheating, stop intensive use and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Laptop Broken",
+    "content": "For a physically damaged company laptop, record the device ID and contact the IT help desk for hardware support."
+  },
+  {
+    "title": "Lost Laptop",
+    "content": "If a company laptop is lost, immediately contact the IT help desk or security team so the device and account access can be protected."
+  },
+  {
+    "title": "Stolen Laptop",
+    "content": "If a company laptop is stolen, immediately report it to the IT help desk or security team and provide the device ID if available."
+  },
+  {
+    "title": "Laptop Device ID",
+    "content": "The device ID should be recorded when reporting company laptop hardware problems so IT support can identify the device."
   },
   {
     "title": "Software Installation",
     "content": "Employees should request software installation through the approved software request process. Unauthorized software should not be installed on company devices."
   },
   {
+    "title": "Software Request",
+    "content": "Use the approved software request process when you need a new application on a company device."
+  },
+  {
+    "title": "Unauthorized Software",
+    "content": "Employees should not install unauthorized software on company devices. Use the approved software request process instead."
+  },
+  {
+    "title": "Application Not Working",
+    "content": "If an approved company application is not working, restart the application and contact IT support if the issue continues."
+  },
+  {
+    "title": "Application Installation Failure",
+    "content": "If an approved software installation fails, retry through the approved software request process and contact IT support if necessary."
+  },
+  {
+    "title": "Software Update",
+    "content": "Keep approved company software updated according to organizational requirements. Contact IT support if an update cannot be installed."
+  },
+  {
     "title": "Email Problem",
     "content": "If company email is not working, check the internet connection, restart the email application, and verify that the account is signed in. If the problem continues, contact IT support."
   },
   {
-    "title": "Account Lockout",
-    "content": "After multiple failed login attempts, an employee account may become locked. Contact the IT help desk to request account unlock assistance."
+    "title": "Email Login",
+    "content": "If you cannot sign in to company email, verify your account credentials and internet connection. Contact IT support if the problem continues."
+  },
+  {
+    "title": "Email Not Sending",
+    "content": "If company email cannot send messages, check the internet connection, restart the email application, and verify the account is signed in."
+  },
+  {
+    "title": "Email Not Receiving",
+    "content": "If company email is not receiving messages, check the internet connection and restart the email application. Contact IT support if the issue continues."
+  },
+  {
+    "title": "Email Application Restart",
+    "content": "Restart the company email application when email is not working, then verify that the account is signed in."
+  },
+  {
+    "title": "Email Account Sign In",
+    "content": "Verify that the company email account is signed in when troubleshooting email problems."
+  },
+  {
+    "title": "Email Connectivity",
+    "content": "Check the internet connection first when company email is not working."
+  },
+  {
+    "title": "Email Sync Problem",
+    "content": "If company email is not synchronizing, check the internet connection, restart the email application, and contact IT support if needed."
+  },
+  {
+    "title": "Email Access Remotely",
+    "content": "Remote employees should verify their internet connection and company account sign-in when accessing company email."
+  },
+  {
+    "title": "Email Password",
+    "content": "If company email access fails because of a password issue, use the approved company password reset process or contact IT support."
+  },
+  {
+    "title": "Printer Problem",
+    "content": "For a company printer problem, verify the device is connected and restart the printer if appropriate. Contact IT support if the issue remains."
+  },
+  {
+    "title": "Printer Not Printing",
+    "content": "If a company printer is not printing, check its connection and restart it. Contact IT support if printing still fails."
+  },
+  {
+    "title": "Printer Offline",
+    "content": "If a company printer appears offline, verify the connection and restart the printer. Contact IT support if it remains offline."
+  },
+  {
+    "title": "Printer Paper Jam",
+    "content": "For a company printer paper jam, follow the printer's approved clearing procedure. Contact IT support if the jam cannot be cleared safely."
+  },
+  {
+    "title": "Printer Setup",
+    "content": "Use the approved company process to set up a printer. Contact IT support if the device cannot be connected."
+  },
+  {
+    "title": "Scanner Problem",
+    "content": "For a company scanner problem, verify the device connection and restart it. Contact IT support if the problem continues."
+  },
+  {
+    "title": "Network Cable",
+    "content": "If a wired company network connection is not working, verify that the network cable is securely connected and contact IT support if needed."
+  },
+  {
+    "title": "Internet Not Working",
+    "content": "If company internet is not working, check the network connection and reconnect to the approved network. Contact IT support if the issue continues."
+  },
+  {
+    "title": "Network Connection Problem",
+    "content": "For a company network connection problem, restart the network connection and verify the device is connected to the approved network."
+  },
+  {
+    "title": "Network Slow",
+    "content": "If the company network is slow, reconnect the device and check whether the problem affects other services. Contact IT support if it continues."
+  },
+  {
+    "title": "Network Access",
+    "content": "Employees should use approved company network connections to access internal resources. Contact IT support if access is unavailable."
+  },
+  {
+    "title": "Browser Problem",
+    "content": "If an approved browser is not working correctly, restart it and verify the network connection. Contact IT support if the problem continues."
+  },
+  {
+    "title": "Browser Cache",
+    "content": "If a company web application behaves unexpectedly, clearing the approved browser cache may help. Contact IT support if the issue remains."
+  },
+  {
+    "title": "Web Application Access",
+    "content": "If a company web application cannot be accessed, verify the internet connection and account sign-in, then contact IT support if needed."
+  },
+  {
+    "title": "Teams Problem",
+    "content": "If the company collaboration application is not working, check the internet connection, restart the application, and contact IT support if the problem continues."
+  },
+  {
+    "title": "Video Meeting Problem",
+    "content": "For company video meeting problems, check the internet connection, microphone, camera, and application sign-in. Contact IT support if necessary."
+  },
+  {
+    "title": "Microphone Problem",
+    "content": "If the microphone does not work in a company meeting application, verify microphone permissions and device selection, then contact IT support if needed."
+  },
+  {
+    "title": "Camera Problem",
+    "content": "If the camera does not work in a company meeting application, verify camera permissions and device selection, then contact IT support if needed."
+  },
+  {
+    "title": "Audio Problem",
+    "content": "If meeting audio is not working, check the selected speaker and microphone devices and restart the meeting application."
+  },
+  {
+    "title": "File Access",
+    "content": "Employees should use approved company storage and permissions when accessing work files. Contact IT support if authorized files cannot be accessed."
+  },
+  {
+    "title": "Shared Folder Access",
+    "content": "If an employee cannot access an authorized shared folder, verify account sign-in and contact IT support for permission assistance."
+  },
+  {
+    "title": "File Permission",
+    "content": "If an employee needs access to a restricted company file, use the approved access-request process or contact IT support."
+  },
+  {
+    "title": "Cloud Storage Access",
+    "content": "Use the organization's approved cloud storage service with the company account. Contact IT support if access fails."
+  },
+  {
+    "title": "File Sync Problem",
+    "content": "If approved company files are not synchronizing, check the internet connection and account sign-in, then contact IT support if the problem continues."
+  },
+  {
+    "title": "Data Backup",
+    "content": "Important company data should be stored using approved company storage and backup procedures rather than unauthorized personal storage."
+  },
+  {
+    "title": "Security Incident",
+    "content": "Report suspected security incidents immediately through the organization's approved IT or security reporting process."
+  },
+  {
+    "title": "Phishing Email",
+    "content": "Do not interact with suspicious links or attachments in a suspected phishing email. Report it through the organization's approved security process."
+  },
+  {
+    "title": "Suspicious Link",
+    "content": "Do not open suspicious links received through company communication channels. Report the message to IT or security using the approved process."
+  },
+  {
+    "title": "Malware Concern",
+    "content": "If you suspect malware on a company device, disconnect from risky activity if possible and immediately contact IT or security support."
+  },
+  {
+    "title": "Security Password Sharing",
+    "content": "Never share company passwords with other people. Use the approved password recovery or reset process when assistance is needed."
+  },
+  {
+    "title": "Device Security",
+    "content": "Company devices should use approved security controls and software. Contact IT support if a required security control is not working."
+  },
+  {
+    "title": "Screen Lock",
+    "content": "Employees should lock company devices when leaving them unattended to protect company information."
+  },
+  {
+    "title": "USB Device",
+    "content": "Use only approved USB and removable storage devices with company systems and follow organizational security requirements."
+  },
+  {
+    "title": "Mobile Device Access",
+    "content": "Use approved company applications and authentication methods when accessing company resources from a mobile device."
+  },
+  {
+    "title": "Remote Work Security",
+    "content": "Remote employees should use approved company devices, networks, and VPN access when working with company resources."
+  },
+  {
+    "title": "Access Request",
+    "content": "Requests for access to company systems should follow the approved access-request process and organizational authorization requirements."
+  },
+  {
+    "title": "New Employee IT Access",
+    "content": "New employees should receive required company accounts and system access through the organization's approved onboarding process."
+  },
+  {
+    "title": "Employee Offboarding Access",
+    "content": "When an employee leaves the organization, system access should be handled through the approved IT and HR offboarding process."
+  },
+  {
+    "title": "System Maintenance",
+    "content": "During planned IT maintenance, some company services may be temporarily unavailable. Follow IT notifications and contact support if access remains unavailable."
+  },
+  {
+    "title": "IT Help Desk",
+    "content": "The IT help desk is the primary support channel for company technology problems that cannot be resolved using approved troubleshooting procedures."
+  },
+  {
+    "title": "Report IT Problem",
+    "content": "When reporting an IT problem, provide a clear description of the issue and relevant device or account information requested by IT support."
+  },
+  {
+    "title": "Support Ticket",
+    "content": "Use the organization's approved IT support ticket process to report technical issues and track support requests."
+  },
+  {
+    "title": "Urgent IT Issue",
+    "content": "For urgent technology or security issues, use the organization's approved urgent IT or security reporting channel immediately."
+  },
+  {
+    "title": "Account Access Request",
+    "content": "If you need access to a company system, submit an access request through the approved process and provide the required business justification."
+  },
+  {
+    "title": "Employee Device Setup",
+    "content": "Company devices should be configured using approved organizational setup procedures and required security controls."
+  },
+  {
+    "title": "New Laptop Setup",
+    "content": "New company laptops should be configured through the approved IT setup process before being used for company work."
+  },
+  {
+    "title": "Device Replacement",
+    "content": "For a company device that needs replacement, provide the device ID and contact the IT help desk for assistance."
+  },
+  {
+    "title": "Device Return",
+    "content": "When returning a company device, follow the organization's approved IT asset-return procedure."
+  },
+  {
+    "title": "IT Policy Question",
+    "content": "Questions about company IT procedures should be answered using the organization's approved IT documentation or by contacting the IT help desk."
   }
 ]
